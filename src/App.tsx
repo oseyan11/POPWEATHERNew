@@ -174,7 +174,7 @@ export default function App() {
           <span className="w-3 h-3 rounded-full bg-[#FF1E56] border border-black animate-ping" />
           <span className="font-black text-sm tracking-wider">POP ART WEATHER</span>
           <span className="text-zinc-600 dark:text-zinc-400">·</span>
-          <span>ROY LICHTENSTEIN & ANDY WARHOL COMIC METEOROLOGY</span>
+          <span>CREATED BY OSEYAN · RETRO COMIC METEOROLOGY</span>
         </div>
         <button
           onClick={() => setIsPhoneFrame(!isPhoneFrame)}

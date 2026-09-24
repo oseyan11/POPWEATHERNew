@@ -27,7 +27,7 @@ export const PopArtBanner: React.FC<PopArtBannerProps> = ({
           POP WEATHER
         </span>
         <span className="hidden sm:inline-block font-sans text-[11px] font-extrabold text-black dark:text-zinc-300">
-          LICHTENSTEIN × RETRO COMIC
+          POP ART × COMIC WEATHER
         </span>
       </div>
 

@@ -215,8 +215,8 @@ export const TelemetrySettingsView: React.FC<TelemetrySettingsViewProps> = ({
           </span>
           <p className="font-sans font-bold text-xs text-zinc-800 leading-tight">
             {lang === 'en'
-              ? 'Roy Lichtenstein Pop Art Live Weather Experience'
-              : 'Roy Lichtenstein Pop Art Çizgi Roman Canlı Hava Durumu'}
+              ? 'Created by Oseyan · Pop Art Live Weather Experience'
+              : 'Oseyan tarafından yapılmıştır · Pop Art Canlı Hava Durumu'}
           </p>
         </div>
       </div>
