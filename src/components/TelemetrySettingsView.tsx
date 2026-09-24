@@ -3,7 +3,6 @@ import { WeatherData } from '../types/weather';
 import { Radio, Languages, Sun, Moon } from 'lucide-react';
 import { Language, translations } from '../services/i18n';
 import { LanguageDropdown } from './LanguageDropdown';
-import { AndroidInstallCard } from './AndroidInstallCard';
 
 interface TelemetrySettingsViewProps {
   data: WeatherData;
@@ -197,9 +196,6 @@ export const TelemetrySettingsView: React.FC<TelemetrySettingsViewProps> = ({
           </button>
         </div>
       </div>
-
-      {/* Android & Mobile App Installation Card */}
-      <AndroidInstallCard lang={lang} />
 
       {/* App Branding Badge Card */}
       <div className="p-4 rounded-3xl bg-[#FFE800] border-3 border-black shadow-[4px_4px_0_#000] flex items-center gap-3">

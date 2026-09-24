@@ -2,7 +2,6 @@ import React from 'react';
 import { Search, RotateCw, MapPin, Navigation } from 'lucide-react';
 import { Coordinates } from '../types/weather';
 import { Language, translations } from '../services/i18n';
-import { LanguageDropdown } from './LanguageDropdown';
 
 interface TopBarProps {
   currentCity: Coordinates;
@@ -11,7 +10,6 @@ interface TopBarProps {
   onLocateUser: () => void;
   isLoading: boolean;
   lang: Language;
-  onSelectLanguage?: (lang: Language) => void;
 }
 
 export const TopBar: React.FC<TopBarProps> = ({
@@ -21,7 +19,6 @@ export const TopBar: React.FC<TopBarProps> = ({
   onLocateUser,
   isLoading,
   lang,
-  onSelectLanguage,
 }) => {
   const t = translations[lang];
 
@@ -30,7 +27,7 @@ export const TopBar: React.FC<TopBarProps> = ({
       {/* Brand & City Comic Badge */}
       <button
         onClick={onOpenSearch}
-        className="flex items-center gap-2 text-left group bg-white dark:bg-[#202230] border-2 border-black px-2.5 sm:px-3 py-1.5 rounded-2xl shadow-[2.5px_2.5px_0_#000] pop-btn max-w-[155px] xs:max-w-[190px] sm:max-w-xs transition-all shrink min-w-0"
+        className="flex items-center gap-2 text-left group bg-white dark:bg-[#202230] border-2 border-black px-2.5 sm:px-3 py-1.5 rounded-2xl shadow-[2.5px_2.5px_0_#000] pop-btn max-w-[170px] xs:max-w-[210px] sm:max-w-xs transition-all shrink min-w-0"
         title={t.search.title}
       >
         <div className="w-7 h-7 rounded-full bg-[#FF1E56] border-2 border-black flex items-center justify-center shrink-0 shadow-[1px_1px_0_#000]">
@@ -53,17 +50,8 @@ export const TopBar: React.FC<TopBarProps> = ({
         </div>
       </button>
 
-      {/* Action Buttons with Language Dropdown */}
+      {/* Action Buttons */}
       <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
-        {/* Quick Language Dropdown */}
-        {onSelectLanguage && (
-          <LanguageDropdown
-            currentLang={lang}
-            onSelectLanguage={onSelectLanguage}
-            variant="compact"
-          />
-        )}
-
         {/* Locate User (GPS) */}
         <button
           onClick={onLocateUser}

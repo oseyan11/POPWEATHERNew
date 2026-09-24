@@ -1,8 +1,7 @@
 import React from 'react';
-import { Share2, Download } from 'lucide-react';
+import { Share2 } from 'lucide-react';
 import { Language } from '../services/i18n';
 import { PopWeatherAppIcon } from './PopWeatherAppIcon';
-import { usePWAInstall } from '../hooks/usePWAInstall';
 
 interface PopArtBannerProps {
   weatherCode: number;
@@ -17,8 +16,6 @@ export const PopArtBanner: React.FC<PopArtBannerProps> = ({
   onOpenShare,
   lang,
 }) => {
-  const { canInstall, installApp } = usePWAInstall();
-
   return (
     <div className="w-full flex items-center justify-between px-3 py-1.5 bg-[#FFFDF0] dark:bg-[#14151F] border-b-2 border-black text-xs font-comic overflow-hidden relative">
       <div className="flex items-center gap-2">
@@ -31,32 +28,17 @@ export const PopArtBanner: React.FC<PopArtBannerProps> = ({
         </span>
       </div>
 
-      <div className="flex items-center gap-1.5">
-        {/* PWA Install Quick Button if available */}
-        {canInstall && (
-          <button
-            onClick={installApp}
-            className="flex items-center gap-1 px-2.5 py-1 rounded-xl bg-[#FFE800] border-2 border-black text-black font-comic font-black text-xs pop-btn shadow-[2px_2px_0_#000] hover:bg-[#00E5FF] transition-colors"
-            title={lang === 'en' ? 'Install Android App' : 'Android Uygulaması Olarak Yükle'}
-          >
-            <Download size={13} className="stroke-[2.5]" />
-            <span>{lang === 'en' ? 'INSTALL' : 'YÜKLE'}</span>
-          </button>
-        )}
-
-        {/* Shareable Card Action Button */}
-        {onOpenShare && (
-          <button
-            onClick={onOpenShare}
-            className="flex items-center gap-1.5 px-3 py-1 rounded-xl bg-[#00E5FF] border-2 border-black text-black font-comic font-black text-xs pop-btn shadow-[2px_2px_0_#000] hover:bg-[#FFE800] transition-colors"
-            title={lang === 'en' ? 'Create & Share Weather Story' : 'Hava Durumu Kartı Oluştur ve Paylaş'}
-          >
-            <Share2 size={13} className="stroke-[2.5]" />
-            <span>{lang === 'en' ? 'SHARE CARD' : 'KARTI PAYLAŞ'}</span>
-          </button>
-        )}
-      </div>
+      {/* Shareable Card Action Button */}
+      {onOpenShare && (
+        <button
+          onClick={onOpenShare}
+          className="flex items-center gap-1.5 px-3 py-1 rounded-xl bg-[#00E5FF] border-2 border-black text-black font-comic font-black text-xs pop-btn shadow-[2px_2px_0_#000] hover:bg-[#FFE800] transition-colors"
+          title={lang === 'en' ? 'Create & Share Weather Story' : 'Hava Durumu Kartı Oluştur ve Paylaş'}
+        >
+          <Share2 size={13} className="stroke-[2.5]" />
+          <span>{lang === 'en' ? 'SHARE CARD' : 'KARTI PAYLAŞ'}</span>
+        </button>
+      )}
     </div>
   );
 };
-

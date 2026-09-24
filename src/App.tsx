@@ -220,7 +220,6 @@ export default function App() {
           onLocateUser={handleLocateUser}
           isLoading={isLoading}
           lang={lang}
-          onSelectLanguage={handleSelectLanguage}
         />
 
         {/* Pop Art Banner with interactive comic sound stickers */}
