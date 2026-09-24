@@ -1,0 +1,10 @@
+{
+  "name": "POP WEATHER",
+  "description": "Mobil odaklı, Nothing OS nokta matris estetiği, Grok keskinliği ve Apple Weather zarafetini harmanlayan gerçek canlı çalışan karanlık tema hava durumu uygulaması.",
+  "requestFramePermissions": [
+    "geolocation"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
